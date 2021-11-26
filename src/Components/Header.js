@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Menu from "./Menu";
+import Link from "./Clases/Link";
 
 const Header = () => {
   const [visibleMenu, setVisibleMenu] = useState(false);
@@ -23,12 +24,8 @@ const Header = () => {
           <span className="font-bold uppercase text-gray-50">погода ua</span>
         </div>
         <div className="flex space-x-4 mr-10">
-          <p className="hidden md:flex text-gray-50 font-bold transform transition duration-300 hover:translate-y-2">
-            <a href="google.com">Головна</a>
-          </p>
-          <p className="hidden md:flex text-gray-50 font-bold transform transition duration-300 hover:translate-y-2">
-            <a href="google.com">Про нас</a>
-          </p>
+          <Link text="Головна" />
+          <Link text="Про нас" />
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,3 @@
-import Weather from "../Components/Weather";
-
 const FetchWeather = (lat, lon) => {
   const key = "fb36ff8457a47f22e45bbe7a3777961e";
   let lang = "ua";
@@ -13,7 +11,7 @@ const FetchWeather = (lat, lon) => {
       }
       return res.json();
     })
-    .then((data) => <Weather weatherData={data} />)
+    .then((data) => console.log(data))
     .catch((error) => console.log(error));
 };
 

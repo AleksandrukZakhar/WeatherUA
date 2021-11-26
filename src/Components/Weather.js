@@ -1,7 +1,9 @@
-import Chart from "./Chart";
-
 const Weather = ({ weatherData }) => {
-  return <Chart weatherData={weatherData} />;
+  return (
+    <div>
+      <span>Weather</span>
+    </div>
+  );
 };
 
 export default Weather;
