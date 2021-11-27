@@ -1,8 +1,7 @@
 import Header from "./Header";
 import Text from "./Text";
 import Location from "./Location";
-import WeatherCard from "./WeatherCard";
-import WeatherBox from "./WeatherBox";
+import Weather from "./Weather";
 
 const App = () => {
   return (
@@ -10,8 +9,7 @@ const App = () => {
       <Header />
       <Text title="Погода UA" subtitle="Погода з усього світу." />
       <Location />
-      <WeatherCard />
-      <WeatherBox />
+      {visibleWeather ? <Weather /> : null}
     </div>
   );
 };
