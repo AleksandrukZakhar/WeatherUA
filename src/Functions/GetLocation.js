@@ -1,4 +1,3 @@
-import FetchWeather from "./FetchWeather";
 import Alert from "../Components/Alert";
 
 let coordinates = {
@@ -16,10 +15,8 @@ const success = (pos) => {
     coordinates.accuracy = crd.accuracy;
   }
   if (crd === null) {
-    <Alert text="Ми не змогли отримати ваші координати" />;
+    return <Alert text="Ми не змогли отримати ваші координати" />;
   }
-
-  FetchWeather(coordinates.lat, coordinates.lon);
 };
 
 const error = (err) => {
