@@ -1,8 +1,8 @@
 import Alert from "../Components/Alert";
 
 let coordinates = {
-  lat: 0,
-  lon: 0,
+  lat: null,
+  lon: null,
   accuracy: 0,
 };
 
