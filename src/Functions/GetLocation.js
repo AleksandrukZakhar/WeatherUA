@@ -33,4 +33,4 @@ const GetLocation = () => {
   navigator.geolocation.getCurrentPosition(success, error, options);
 };
 
-export { GetLocation, coordinates };
+export { GetLocation };

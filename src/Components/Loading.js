@@ -1,7 +1,7 @@
-import Circle from "../Images/Circle.svg";
+import LoadingImage from "../Images/Loading.png";
 
 const Loading = () => {
-  return <Circle className="flex flex-1 text-blue-600" />;
+  return <LoadingImage className="flex flex-1" />;
 };
 
 export default Loading;
