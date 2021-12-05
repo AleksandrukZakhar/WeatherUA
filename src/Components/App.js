@@ -14,12 +14,7 @@ const App = () => {
     accuracy: 0,
   });
   return (
-    <Context.Provider
-      value={{
-        Data: [data, setData],
-        Coordinates: [coordinates, setCoordinates],
-      }}
-    >
+    <Context.Provider value={{ data, setData, coordinates, setCoordinates }}>
       <div>
         <Header />
         <Text title="Погода UA" subtitle="Погода з усього світу." />

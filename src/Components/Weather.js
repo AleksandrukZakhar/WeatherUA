@@ -4,9 +4,8 @@ import FetchWeather from "../Functions/FetchWeather";
 import WeatherCard from "./WeatherCard";
 
 const Weather = () => {
-  const { Coordinates, Data } = useContext(Context);
-  const [coordinates] = Coordinates;
-  const setData = Data;
+  const { coordinates, setData } = useContext(Context);
+
   FetchWeather(coordinates, setData);
   return (
     <div className="flex flex-row flex-none space-x-10">

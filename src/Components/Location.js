@@ -3,8 +3,7 @@ import { Context } from "./App";
 import Alert from "./Alert";
 
 const Location = () => {
-  const { Coordinates } = useContext(Context);
-  const [setCoordinates] = Coordinates;
+  const { setCoordinates } = useContext(Context);
 
   const success = (pos) => {
     var crd = pos.coords;
