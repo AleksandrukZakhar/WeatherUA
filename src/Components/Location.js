@@ -1,10 +1,6 @@
-import { useContext } from "react";
-import { Context } from "./App";
 import Alert from "./Alert";
 
-const Location = () => {
-  const { setCoordinates } = useContext(Context);
-
+const Location = ({ setCoordinates }) => {
   const success = (pos) => {
     var crd = pos.coords;
 
