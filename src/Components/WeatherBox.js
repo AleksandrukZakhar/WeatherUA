@@ -19,7 +19,7 @@ const WeatherBox = ({ data }) => {
       <div className="flex flex-row space-x-6 relative left-16">
         {data.map((daily, index) => {
           if (index === 0) {
-            dayTime.map((currentDayTime) => {
+            return dayTime.map((currentDayTime) => {
               return (
                 <MiniWeatherCard
                   temp={Math.round(parseInt(daily.temp[currentDayTime], 10))}
