@@ -18,17 +18,20 @@ const WeatherBox = ({ data }) => {
       </div>
       <div className="flex flex-row space-x-6 relative left-16">
         {data.map((daily, index) => {
-          if (index < 4) {
-            return (
-              <MiniWeatherCard
-                temp={Math.round(parseInt(daily.temp[dayTime[index]], 10))}
-                feelsLike={daily.feels_like[dayTime[index]]}
-                pressure={daily.pressure}
-                humidity={daily.humidity}
-                windSpeed={daily.wind_speed}
-              />
-            );
+          if (index === 0) {
+            dayTime.map((currentDayTime) => {
+              return (
+                <MiniWeatherCard
+                  temp={Math.round(parseInt(daily.temp[currentDayTime], 10))}
+                  feelsLike={daily.temp[currentDayTime]}
+                  pressure={daily.pressure}
+                  humidity={daily.humidity}
+                  windSpeed={daily.wind_speed}
+                />
+              );
+            });
           }
+          return null;
         })}
       </div>
     </div>
