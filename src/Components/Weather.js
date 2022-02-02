@@ -1,4 +1,3 @@
-import { useState, useCallback } from "react";
 import WeatherCard from "./WeatherCard";
 import WeatherBox from "./WeatherBox";
 import { uid } from "uid";
