@@ -9,17 +9,20 @@
     "@testing-library/user-event": "^12.1.10",
     "browserslist": "^4.17.5",
     "cross-env": "^7.0.3",
+    "dayjs": "^1.10.7",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "uid": "^2.0.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "build:css": "postcss src/Styles/tailwind.css -o src/Styles/app.css",
     "watch:css": "postcss src/Styles/tailwind.css -o src/Styles/app.css --watch",
     "react-scripts:start": "sleep 5 && react-scripts start",
     "start": "run-p watch:css react-scripts:start",
-    "build": "react-scripts build",
+    "build": "run-s build:css react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
