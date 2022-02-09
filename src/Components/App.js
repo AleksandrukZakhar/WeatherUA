@@ -9,6 +9,7 @@ const App = () => {
   const [coordinates, setCoordinates] = useState({
     lat: null,
     lon: null,
+    accuracy: null,
   });
 
   const FetchWeather = async () => {

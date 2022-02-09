@@ -1,12 +1,9 @@
-import { useState } from "react";
 import WeatherCard from "./WeatherCard";
 import WeatherBox from "./WeatherBox";
 import { uid } from "uid";
 import dayjs from "dayjs";
 
 const Weather = ({ data }) => {
-  const [element, setElement] = useState(0);
-
   const daysOfWeek = [
     "Неділя",
     "Понеділок",
@@ -44,8 +41,6 @@ const Weather = ({ data }) => {
           }
           return (
             <WeatherCard
-              elementNumber={index}
-              setElement={setElement()}
               key={uid()}
               min={daily.temp.min}
               max={daily.temp.max}
@@ -57,7 +52,7 @@ const Weather = ({ data }) => {
           );
         })}
       </div>
-      <WeatherBox data={data} element={element} />
+      <WeatherBox data={data} />
     </>
   );
 };
