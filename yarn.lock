@@ -7841,6 +7841,13 @@ node-int64@^0.4.0:
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
   integrity sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=
 
+node-ipinfo@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/node-ipinfo/-/node-ipinfo-3.0.2.tgz#dd6324f87b34f5566e710ebb2ec1060d6aa777fb"
+  integrity sha512-eOglEZtYEYDbch/hFlO9Q4zNzCM2sfEw2p2ZpeHE1do1pD8c/inBdDbFHOW+dfBM2zKyuoI6XtDBA0BAR79dCw==
+  dependencies:
+    lru-cache "^6.0.0"
+
 node-libs-browser@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/node-libs-browser/-/node-libs-browser-2.2.1.tgz#b64f513d18338625f90346d27b0d235e631f6425"

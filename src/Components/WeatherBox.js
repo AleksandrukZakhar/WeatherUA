@@ -1,6 +1,7 @@
 import MiniWeatherCard from "./MiniWeatherCard";
+import { uid } from "uid";
 
-const WeatherBox = ({ data }) => {
+const WeatherBox = ({ data, element }) => {
   const dayTime = ["morn", "day", "eve", "night"];
   const dayTimeUA = ["Ранок", "День", "Вечір", "Ніч"];
 
@@ -19,21 +20,23 @@ const WeatherBox = ({ data }) => {
       </div>
       <div className="flex flex-row space-x-6 relative left-16">
         {data.map((daily, index) => {
-          if (index === 0) {
-            return dayTime.map((currentDayTime, index) => {
-              return (
-                <MiniWeatherCard
-                  dayTime={dayTimeUA[index]}
-                  temp={Math.round(parseInt(daily.temp[currentDayTime], 10))}
-                  feelsLike={daily.temp[currentDayTime]}
-                  pressure={daily.pressure}
-                  humidity={daily.humidity}
-                  windSpeed={daily.wind_speed}
-                />
-              );
-            });
-          }
-          return null;
+          return dayTime.map((currentDayTime, index) => {
+            if (index > element) {
+              return null;
+            }
+            return (
+              <MiniWeatherCard
+                key={uid()}
+                dayTime={dayTimeUA[index]}
+                temp={Math.round(parseInt(daily.temp[currentDayTime], 10))}
+                feelsLike={daily.temp[currentDayTime]}
+                pressure={daily.pressure}
+                humidity={daily.humidity}
+                windSpeed={daily.wind_speed}
+                image={daily.weather[0].icon}
+              />
+            );
+          });
         })}
       </div>
     </div>

@@ -1,9 +1,12 @@
+import { useState } from "react";
 import WeatherCard from "./WeatherCard";
 import WeatherBox from "./WeatherBox";
 import { uid } from "uid";
 import dayjs from "dayjs";
 
 const Weather = ({ data }) => {
+  const [element, setElement] = useState(0);
+
   const daysOfWeek = [
     "Неділя",
     "Понеділок",
@@ -27,22 +30,26 @@ const Weather = ({ data }) => {
     "Листопад",
     "Грудень",
   ];
-  const dayOfWeek = dayjs().locale("ua").format("d");
-  const dayOfMonth = dayjs().format("D");
+  let dayOfWeek = dayjs().locale("ua").format("d");
+  let dayOfMonth = dayjs().format("D");
   const month = dayjs().locale("ua").format("M");
 
   return (
     <>
-      <div className="flex flex-row flex-none">
+      <div className="flex flex-row flex-none space-x-10">
         {data.map((daily, index) => {
           if (index > 0) {
-            return null;
+            dayOfWeek = dayjs().add(index, "day").locale("ua").format("d");
+            dayOfMonth = dayjs().add(index, "day").locale("ua").format("D");
           }
           return (
             <WeatherCard
+              elementNumber={index}
+              setElement={setElement()}
               key={uid()}
               min={daily.temp.min}
               max={daily.temp.max}
+              image={daily.weather[0].icon}
               dayOfWeek={daysOfWeek[dayOfWeek]}
               dayOfMonth={dayOfMonth}
               month={months[month]}
@@ -50,7 +57,7 @@ const Weather = ({ data }) => {
           );
         })}
       </div>
-      <WeatherBox data={data} />
+      <WeatherBox data={data} element={element} />
     </>
   );
 };

@@ -1,5 +1,3 @@
-import Alert from "./Alert";
-
 const Location = ({ setCoordinates }) => {
   const success = (pos) => {
     var crd = pos.coords;
@@ -12,12 +10,11 @@ const Location = ({ setCoordinates }) => {
       });
     }
     if (crd === null) {
-      return <Alert text="Ми не змогли отримати ваші координати" />;
     }
   };
 
   const error = (err) => {
-    return <Alert text={`Помилка ${err}`} />;
+    console.log(err);
   };
 
   let options = {
